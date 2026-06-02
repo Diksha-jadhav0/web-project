@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('bg.png');
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.gif img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+}
+
+.question h1 {
+    font-size: 2rem;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 25px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#yesBtn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#noBtn {
+    background-color: #FF0000;
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.1);
+    border: 3px solid black;
+}
+
+.message-box {
+    margin-top: 20px;
+    background-color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.no-message {
+    color: red;
+    border: 2px solid red;
+}
+
+.yes-message {
+    color: green;
+    background-color: #D4EDDA;
+    border: 2px solid #28A745;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .question h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+}

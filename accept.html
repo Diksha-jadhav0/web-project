@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Jar 💖</title>
+    <link rel="stylesheet" href="accept.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💌 Your Digital Love Jar 💌</h1>
+        <p>Click the jar to pick a love note! ✨</p>
+
+        <div class="love-jar" onclick="pickLoveNote()">
+            <img src="lovejar.png" alt="Love Jar">
+        </div>
+
+        <div id="note-container"></div>
+        <div class="custom-note">
+            <input type="text" id="newNote" placeholder="Write your own love note...">
+            <button onclick="addLoveNote()">Add Note</button>
+        </div>
+    </div>
+
+    <script src="accept.js"></script>
+</body>
+</html>
