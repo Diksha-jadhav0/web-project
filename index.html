@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine</title>
+    <title>Will You Be My Valentine? ✨</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="container">
-        <div class="gif">
-            <img src="emoji.gif" alt="Emoji">
+        <div class="gif-container">
+            <img src="emoji.gif" alt="Cute Emoji" class="main-gif">
         </div>
-        <br><br>
-        <div class="question">
-            <h1>Diksha wants to ask ,</h1>
-            <h1>Will You Be My Valentine?</h1> 
+        
+        <div class="content">
+            <h2 class="sub-heading">Diksha wants to ask...</h2>
+            <h1 class="main-heading">Will You Be My Valentine?</h1> 
         </div>
-    </div>
-    
-    <br><br>
-    
-    <div class="buttons">
-        <button id="yesBtn" onclick="acceptValentine()">Yes</button>
-        <button id="noBtn" onclick="showPrompt()">No</button>
-    </div>
 
-    <div id="message-container"></div>
+        <div class="buttons">
+            <button id="yesBtn" onclick="acceptValentine()">Yes, I'd love to!</button>
+            <button id="noBtn" onclick="showPrompt()">No</button>
+        </div>
+
+        <div id="message-container"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>

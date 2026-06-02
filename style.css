@@ -1,84 +1,142 @@
+:root {
+    --primary-color: #f8c8dc; /* Soft Rose */
+    --secondary-color: #fffdd0; /* Cream */
+    --accent-color: #ff8fa3; /* Deeper Rose */
+    --text-color: #333333; /* Elegant Charcoal */
+    --white: rgba(255, 255, 255, 0.8);
+}
+
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-image: url('bg.png');
-    background-size: cover;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 253, 208, 0.2); /* Subtle cream overlay */
+    z-index: -1;
 }
 
 .container {
-    margin-top: 50px;
-    padding: 20px;
+    background: var(--white);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 3rem 2rem;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    animation: slideUp 0.8s ease-out;
 }
 
-.gif img {
-    width: 100%;
-    max-width: 150px;
+.gif-container {
+    margin-bottom: 2rem;
+}
+
+.main-gif {
+    width: 150px;
     height: auto;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
 }
 
-.question h1 {
-    font-size: 2rem;
+.main-gif:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.sub-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.main-heading {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.2;
 }
 
 .buttons {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 20px;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 button {
-    padding: 15px 25px;
-    font-size: 18px;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
     border: none;
     cursor: pointer;
-    border-radius: 10px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 50px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Inter', sans-serif;
 }
 
 #yesBtn {
-    background-color: #4CAF50;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    box-shadow: 0 4px 15px rgba(248, 200, 220, 0.4);
+}
+
+#yesBtn:hover {
+    background-color: var(--accent-color);
     color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 143, 163, 0.5);
 }
 
 #noBtn {
-    background-color: #FF0000;
-    color: white;
+    background-color: #f1f1f1;
+    color: #888;
 }
 
-button:hover {
-    transform: scale(1.1);
-    border: 3px solid black;
+#noBtn:hover {
+    background-color: #e0e0e0;
+    color: #444;
+    transform: translateY(-2px);
 }
 
 .message-box {
-    margin-top: 20px;
-    background-color: white;
-    padding: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    border-radius: 10px;
-    animation: fadeIn 0.5s ease-in-out;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    font-weight: 500;
+    background: rgba(248, 200, 220, 0.15);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    animation: fadeIn 0.4s ease-in-out;
 }
 
-.no-message {
-    color: red;
-    border: 2px solid red;
-}
-
-.yes-message {
-    color: green;
-    background-color: #D4EDDA;
-    border: 2px solid #28A745;
-}
-
-@keyframes fadeIn {
+@keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(-10px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -86,13 +144,16 @@ button:hover {
     }
 }
 
-@media (max-width: 600px) {
-    .question h1 {
-        font-size: 1.5rem;
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
 
-    button {
-        padding: 12px 20px;
-        font-size: 16px;
+@media (max-width: 600px) {
+    .container {
+        padding: 2rem 1.5rem;
+    }
+    .main-heading {
+        font-size: 1.8rem;
     }
 }
