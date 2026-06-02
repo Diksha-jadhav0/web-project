@@ -29,11 +29,7 @@ function showPrompt() {
 
         clickCount++;
         
-        // Increase Yes button size slightly on every 'No' click for a playful effect
-        let yesBtn = document.getElementById("yesBtn");
-        let currentSize = parseFloat(window.getComputedStyle(yesBtn).fontSize);
-        yesBtn.style.fontSize = (currentSize + 2) + "px";
-        yesBtn.style.padding = (parseFloat(window.getComputedStyle(yesBtn).paddingTop) + 2) + "px " + (parseFloat(window.getComputedStyle(yesBtn).paddingLeft) + 4) + "px";
+
     } else {
         // After 10 messages, maybe just auto-accept or stop? 
         // Let's keep it classy and just loop or guide them back.
